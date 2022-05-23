@@ -76,9 +76,8 @@ $partiteGiocate = [
 // echo "{$partiteGiocate[$i]['squadraHome']} - {$partiteGiocate[$i]['squadraGuest']} | {$partiteGiocate[$i]['puntiPartitaHome']} - {$partiteGiocate[$i]['puntiPartitaGuest']}"; 
 // }
 ?>
-<!-- ## Snack 1 -->
-<!-- Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” -->
-
+<!-- /## Snack 1 -->
+<!-- ## Snack 2 -->
 <?php
 
 if(empty($_GET['name'])){
@@ -92,7 +91,6 @@ if(empty($_GET['name'])){
   }
   echo $name;
 }
-
 
 // $email = $_GET['email'];
 // var_dump($email);
@@ -110,8 +108,146 @@ if(empty($_GET['email'])){
 
 ?>
 
+<!-- ## Snack 3 -->
+<?php
 
+$posts = [
 
+    '10/01/2019' => [
+        [
+            'title' => 'Post 1',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 1'
+        ],
+        [
+            'title' => 'Post 2',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 2'
+        ],
+    ],
+    '10/02/2019' => [
+        [
+            'title' => 'Post 3',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 3'
+        ]
+    ],
+    '15/05/2019' => [
+        [
+            'title' => 'Post 4',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 4'
+        ],
+        [
+            'title' => 'Post 5',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 5'
+        ],
+        [
+            'title' => 'Post 6',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 6'
+        ]
+    ],
+];
+
+$myKeys = array_keys($posts);
+// var_dump($myKeys);
+
+// for($i = 0; $i <= count($posts); $i++){
+//   var_dump($posts[$myKeys[$i]]);
+// }
+
+?>
+<!-- /## Snack 3 -->
+
+<!-- ## Snack 4 -->
+<?php
+$numbers = [];
+for($i = 0; $i < 15; $i++){
+    $numero = rand(1, 40);
+    if(!in_array($numero, $numbers)){
+        array_push($numbers, $numero);
+    };
+};
+$results = print_r($numbers, true);
+?>
+<!-- /## Snack 4 -->
+
+<!-- Snack5 -->
+<?php
+$txt = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero labore itaque corrupti rerum quod, similique repellat aliquam sint nostrum, consectetur maxime quidem vitae impedit quisquam in fugit quis dolore consequatur quia ipsam a quibusdam? Delectus numquam repellat hic nostrum iure eius omnis magni, a vero blanditiis, ad quibusdam nesciunt? Sapiente voluptate, mollitia voluptas voluptatum expedita eius eaque repellendus in tempora aspernatur minus nemo perspiciatis reiciendis voluptatem sequi odit accusantium optio cum aperiam quod? Officiis sint quasi sunt atque quisquam nisi quaerat hic animi! Mollitia ad, amet exercitationem omnis tempora porro maxime explicabo. Cum dignissimos ipsum reprehenderit culpa quis et quia.'; 
+$txtExp = explode('.', $txt);
+// var_dump($txtExp);
+?>
+<!-- /## Snack 5 -->
+
+<!-- ## Snack 6 -->
+<?php
+ 
+    $db = [
+        'teachers' => [
+            [
+                'name' => 'Michele',
+                'lastname' => 'Papagni'
+            ],
+            [
+                'name' => 'Fabio',
+                'lastname' => 'Forghieri'
+            ]
+        ],
+        'pm' => [
+            [
+                'name' => 'Roberto',
+                'lastname' => 'Marazzini'
+            ],
+            [
+                'name' => 'Federico',
+                'lastname' => 'Pellegrini'
+            ]
+        ]
+    ];
+
+    
+
+?> <!-- ## Snack 6 -->
+
+ <!-- ## Snack 7 -->
+<?php
+$alunni = [
+  [
+      'nome' => 'Dennis',
+      'cognome' => 'Gambini',
+      'voti' => [2,7,9,6]
+  ],
+  [
+      'nome' => 'Francesco',
+      'cognome' => 'Ciannavei',
+      'voti' => [5,7,10,1]
+  ],
+  [
+      'nome' => 'Davide',
+      'cognome' => 'Chon',
+      'voti' => [3,4,8,9]
+  ],
+  [
+      'nome' => 'Federico',
+      'cognome' => 'Magli',
+      'voti' => [1,9,8,6]
+  ]
+];
+
+function calcolaMedia($array) {
+  $somma = 0;
+  for($i = 0; $i < count($array); $i++){
+      $somma = $somma + $array[$i];
+  }
+  $media = $somma / count($array);
+  return $media;
+}
+?>
+
+ <!-- /## Snack 7 -->
 
 
 
@@ -149,55 +285,91 @@ if(empty($_GET['email'])){
 
     <section id="snack2">
       <h1> Snack 2 </h1>
-
-      <!-- ## Snack 2 -->
-     <!-- Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” -->
-
-    <h2> GET </h2>
-    <p> <?php echo $name ?> </p>
-    <p class="<?php echo $class ?>"> <?php echo $alert ?> </p>
-    </section> <!-- /## Snack 2 -->
-
+        <h2> GET </h2>
+        <p> <?php echo $name ?> </p>
+        <p class="<?php echo $class ?>"> <?php echo $alert ?> </p>
+        </section>
+       <!-- /## Snack 2 -->
 
     <section id="snack3">
         
         <h1> Snack 3 </h1>
+        
+        <p><?php foreach($posts as $keyOne => $valueOne){ ?>
+        <li>
+        <?php echo $keyOne.'-'?>
+        <ul>
+            <li><?php foreach($valueOne as $valueTwo => $x){
+            echo $x["title"].': '.$x["author"].'- '.$x["text"].'</br>';
+        }?></li>
+        </ul>
+        </li>
+        <?php } ?>
+    </p>
+      
 
-        <!-- inserire qui il codice dello snack (aprire i tag php se necessario) -->
-
-    </section>
+    </section>  <!-- /## Snack 3 -->
 
     <section id="snack4">
-        
         <h1> Snack 4 </h1>
-
-        <!-- inserire qui il codice dello snack (aprire i tag php se necessario) -->
-
-    </section>
+        <pre><?php echo $results ?></pre>
+    </section> <!-- /## Snack 4 -->
 
     <section id="snack5">
         
         <h1> Snack 5 </h1>
-
-        <!-- inserire qui il codice dello snack (aprire i tag php se necessario) -->
+        <ul>
+          <?php for($i = 0; $i < count($txtExp); $i++){ ?>
+            <li>
+              <?php echo $txtExp[$i]; ?>
+            </li>
+          <?php } ?>
+        </ul>
+        <!-- /## Snack 5 -->
 
     </section>
 
-    <section id="snack6">
-        
-        <h1> Snack 6 </h1>
+    <section id="snack6"> 
+      <h1> Snack 6 </h1>
+      <ul class="green">
+        <?php for($i = 0; $i < count($db["teachers"]); $i++){ ?>
+            <li>
+            <?php echo $db["teachers"][$i]["name"].' '.$db["teachers"][$i]["lastname"];?>
+            </li>
+            <?php };?>
+        </ul>
+        <ul class="grey">
+        <?php for($i = 0; $i < count($db["pm"]); $i++){ ?>
+            <li>
+            <?php echo $db["pm"][$i]["name"].' '.$db["pm"][$i]["lastname"];?>
+            </li>
+            <?php };?>
+        </ul>
 
-        <!-- inserire qui il codice dello snack (aprire i tag php se necessario) -->
+         
+
+
+        <!-- /## Snack 6 -->
 
     </section>
 
     <section id="snack7">
         
         <h1> Snack 7 </h1>
+        <ul>
+            <?php for($k = 0; $k < count($alunni); $k++){ ?>
+                <li>
+                    <?php 
+                    $a = calcolaMedia($alunni[$k]['voti']);
+                    echo $alunni[$k]['nome'].' '.$alunni[$k]['cognome'].' media voti: '.$a; 
+                    ?>
+                </li>
+            <?php } ?>
+        </ul>
 
-        <!-- inserire qui il codice dello snack (aprire i tag php se necessario) -->
+        <!-- /snack7 -->
 
-    </section>
+    </section> <!-- /## Snack 7 -->
 
 
 
