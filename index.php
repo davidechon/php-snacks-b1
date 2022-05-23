@@ -15,8 +15,8 @@ Utilizzare questo array: https://pastebin.com/CkX3680A. Stampiamo il nostro arra
 ## Snack 7
 Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno avrà Nome, Cognome e un array contenente i suoi voti scolastici. Stampare Nome, Cognome e la media dei voti di ogni alunno. -->
 
+<!-- ## Snack 1 -->
 <?php
-// ## Snack 1
 
 $partiteGiocate = [
   [
@@ -70,17 +70,52 @@ $partiteGiocate = [
   
 ];
 // var_dump ($partiteGiocate);
-echo $partiteGiocate[1]['squadraHome'];
+// echo $partiteGiocate[1]['squadraHome'];
 
-for( $i= 0; $i < count($partiteGiocate); $i++){ 
+// for( $i= 0; $i < count($partiteGiocate); $i++){ 
+// echo "{$partiteGiocate[$i]['squadraHome']} - {$partiteGiocate[$i]['squadraGuest']} | {$partiteGiocate[$i]['puntiPartitaHome']} - {$partiteGiocate[$i]['puntiPartitaGuest']}"; 
+// }
+?>
+<!-- ## Snack 1 -->
+<!-- Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” -->
 
-echo "{$partiteGiocate[$i]['squadraHome']} - {$partiteGiocate[$i]['squadraGuest']} | {$partiteGiocate[$i]['puntiPartitaHome']} - {$partiteGiocate[$i]['puntiPartitaGuest']}"; 
+<?php
 
+if(empty($_GET['name'])){
+  $alert = 'non hai inserito un nome';
+  $class = 'alert-danger';
+}else{
+  $name = $_GET['name'];
+  if(strlen($name) > 4){
+    $alert = 'il tuo nome è valido';
+    $class = 'alert-success';
+  }
+  echo $name;
 }
 
-// 
+
+// $email = $_GET['email'];
+// var_dump($email);
+if(empty($_GET['email'])){
+  $alert = 'non hai inserito la mail';
+  $class = 'alert-danger';
+
+}elseif(strpos($email,'@') !== false && strpos($email,'.')  !== false ){
+  $alert = 'la tua mail è valida';
+  $class = 'alert-success';
+}else{
+  $alert = 'la tua mail non è valida';
+  $class = 'alert-danger';
+}
 
 ?>
+
+
+
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -96,25 +131,76 @@ echo "{$partiteGiocate[$i]['squadraHome']} - {$partiteGiocate[$i]['squadraGuest'
   <title>Php Snacks B1</title>
 </head>
 <body>
-  <main>
-     <!-- ## Snack 1 -->
-    <h1> Snack 1</h1>
-    <h2> Partite Giocate </h2>
-    <ul>
-      <?php 
-      for( $i= 0; $i < count($partiteGiocate); $i++){ ?>
-      <li>
-      <?php echo "{$partiteGiocate[$i]['squadraHome']} - {$partiteGiocate[$i]['squadraGuest']} | {$partiteGiocate[$i]['puntiPartitaHome']} - {$partiteGiocate[$i]['puntiPartitaGuest']} <br>"; ?>
-      </li>
-       <?php 
-       }
-      ?>
-    </ul> 
-     
-   
-      <!-- /## Snack 1 -->
-  </main>
+
+    <section id="snack1">
+      <h1> Snack 1</h1>
+      <h2> Partite Giocate </h2>
+      <ul>
+        <?php 
+        for( $i= 0; $i < count($partiteGiocate); $i++){ ?>
+        <li>
+        <?php echo "{$partiteGiocate[$i]['squadraHome']} - {$partiteGiocate[$i]['squadraGuest']} | {$partiteGiocate[$i]['puntiPartitaHome']} - {$partiteGiocate[$i]['puntiPartitaGuest']} <br>"; ?>
+        </li>
+        <?php 
+        }
+        ?>
+      </ul> 
+    </section> <!-- /## Snack 1 -->
+
+    <section id="snack2">
+      <h1> Snack 2 </h1>
+
+      <!-- ## Snack 2 -->
+     <!-- Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” -->
+
+    <h2> GET </h2>
+    <p> <?php echo $name ?> </p>
+    <p class="<?php echo $class ?>"> <?php echo $alert ?> </p>
+    </section> <!-- /## Snack 2 -->
 
 
+    <section id="snack3">
+        
+        <h1> Snack 3 </h1>
+
+        <!-- inserire qui il codice dello snack (aprire i tag php se necessario) -->
+
+    </section>
+
+    <section id="snack4">
+        
+        <h1> Snack 4 </h1>
+
+        <!-- inserire qui il codice dello snack (aprire i tag php se necessario) -->
+
+    </section>
+
+    <section id="snack5">
+        
+        <h1> Snack 5 </h1>
+
+        <!-- inserire qui il codice dello snack (aprire i tag php se necessario) -->
+
+    </section>
+
+    <section id="snack6">
+        
+        <h1> Snack 6 </h1>
+
+        <!-- inserire qui il codice dello snack (aprire i tag php se necessario) -->
+
+    </section>
+
+    <section id="snack7">
+        
+        <h1> Snack 7 </h1>
+
+        <!-- inserire qui il codice dello snack (aprire i tag php se necessario) -->
+
+    </section>
+
+
+
+    
 </body>
 </html>

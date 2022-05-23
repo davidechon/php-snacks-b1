@@ -1,1 +1,18 @@
-/* body{background-color: lime;} */
+   /* stile per lo snack 6 */
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.grey, .green {
+    padding: 40px;
+    float: left;
+    width: 50%;
+}
+.grey {
+    background: grey;
+}
+.green {
+    background: green;
+}
