@@ -66,7 +66,6 @@ Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno 
       'squadraGuest' => 'Ospite Otto',
       'puntiPartitaGuest' => '66',
     ],
-    
   ];
   // var_dump ($partiteGiocate);
   // echo $partiteGiocate[1]['squadraHome'];
@@ -108,6 +107,7 @@ Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno 
 ?>
 <!-- /## Snack 2 -->
 
+<!-- ## Snack 3 -->
 <?php
   $posts = [
       '10/01/2019' => [
@@ -148,11 +148,21 @@ Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno 
       ],
   ];
 
-  $myKeys = array_keys($posts);
-  // var_dump($myKeys);
+  // $keys = array_keys($posts);
+  // // var_dump($myKeys);
   // for($i = 0; $i <= count($posts); $i++){
-  //   var_dump($posts[$myKeys[$i]]);
+  //   echo "<h2>$keys[$i]</h2>";
+  //   for($x =0; $x < count($posts[$keys[$i]]); $x++){
+  //     echo "<span>{$posts[$keys[$i]][$x]['title']}</span><br>
+  //           <span>{$posts[$keys[$i]][$x]['author']}</span><br>
+  //           <span>{$posts[$keys[$i]][$x]['text']}</span><br>
+  //     ";
+  //   }
+  //   // echo '<pre>';
+  //   //   var_dump($posts[$keys[$i]]);
+  //   // echo '</pre>';
   // }
+  
   ?>
 <!-- /## Snack 3 -->
 
@@ -284,18 +294,26 @@ Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno 
 
 <!-- ## Snack 3 -->
     <section id="snack3">
-        <h1> Snack 3 </h1>
-        <p><?php foreach($posts as $keyOne => $valueOne){ ?>
-          <ul>
-          <?php echo $keyOne.' - '?>
-            <li>
-                <?php foreach($valueOne as $valueTwo => $x){
-                echo $x["title"].' : '.$x["author"].' - '.$x["text"].'</br>';
-            }?>
-            </li>
-        </ul>
-          <?php } ?>
-        </p>
+        
+        <?php 
+        foreach($posts as $key => $value){
+          echo "<h2>{$key}</h2>";
+          echo "<ul>";
+            foreach($value as $index => $item){
+              // echo "$index";
+              // echo "<li>{$item['title']} - 
+              //       {$item['author']} - 
+              //       {$item['text']}</li>";
+              foreach($item as $k=>$val){
+                echo "<li>{$k}: {$val}</li>";
+              }
+            }
+          echo "</ul>";
+            
+        }
+
+        ?>
+
     </section> <!-- /## Snack 3 -->
 
 <!-- ## Snack 4 -->
